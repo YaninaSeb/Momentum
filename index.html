@@ -6,204 +6,170 @@
   <link href="assets/favicon.ico" rel="shortcut icon" />
   <link rel="stylesheet" href="css/owfont-regular.css" /> 
   <link rel="stylesheet" href="css/style.css" />
-  <title>momentum</title>
-
-  <script type="text/javascript" src="/quotes/quotes.json"></script>
-  <script type="text/javascript" src="/quotes/quotes_en.json"></script>
-
-
+  <title>Momentum</title>
+  <script src="../quotes/quotes.json"></script>
+  <script src="../quotes/quotes_en.json"></script>
 </head>
 <body>
-  
+<header class="header">
+  <!--ПЛЕЙЕР-->
+  <div class="player block-audio"> 
+    <div class="player-controls">
+      <button class="play-prev   player-icon"></button>
+      <button class="play   player-icon"></button>
+      <button class="play-next   player-icon"></button>
+    </div>
+    <ul class="play-list">
+    </ul>
+  </div>
 
-  <header class="header">
-    
-    <!--ПЛЕЙЕР-->
-    <div class="player block-audio"> 
-      <div class="player-controls">
-        <button class="play-prev   player-icon"></button>
-        <button class="play   player-icon"></button>
-        <button class="play-next   player-icon"></button>
+  <!--КАСТОМНЫЙ ПЛЕЙЕР-->
+  <div class="custom-player block-audio">
+    <div class="name-custom-player"></div>
+    <div class="controls-custom-player"> 
+        <input type="range" class="progress" value="0"></input>
+    </div>
+
+    <div class="controls-custom-player-two">
+      <div class="time-custom-player">
+        <div class="current">0:00</div>
+        <div class="divider">/</div>
+        <div class="length">00:00</div>
       </div>
-      <ul class="play-list">
-      </ul>
-    </div>
 
-
-    <!--КАСТОМНЫЙ ПЛЕЙЕР-->
-
-    <div class="custom-player block-audio">
-      <div class="name-custom-player"></div>
-
-      <div class="controls-custom-player"> 
-            <input type="range" class="progress" value="0"></input>
-      </div>    
-
-      <div class="controls-custom-player-two">
-          <div class="time-custom-player">
-            <div class="current">0:00</div>
-            <div class="divider">/</div>
-            <div class="length">00:00</div>
-          </div>
-
-          <div class="volume-custom-player">
-            <div class="volume-button"></div>
-            <div class="volume icono-volumeMedium"></div>
-          </div>
-
-          <div>
-            <input type="range" class="volume-percentage" min="0" max="100" value="100"></input>
-          </div>  
-
+      <div class="volume-custom-player">
+        <div class="volume-button"></div>
+        <div class="volume icono-volumeMedium"></div>
       </div>
+
+        <div>
+          <input type="range" class="volume-percentage" min="0" max="100" value="100"></input>
+        </div>
+
     </div>
-    
+  </div>
 
-        <!--ПОГОДА-->
-    <div class="weather">
-      <input type="text" class="city" value="Minsk" placeholder="[Enter sity]"/>
-      <i class="weather-icon owf"></i>
-      <div class="weather-error"></div>
-      <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
-      </div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
+  <!--ПОГОДА-->
+  <div class="weather">
+    <input type="text" class="city" value="Minsk" placeholder="[Enter sity]"/>
+    <i class="weather-icon owf"></i>
+    <div class="weather-error"></div>
+    <div class="description-container">
+      <span class="temperature"></span>
+      <span class="weather-description"></span>
     </div>
+    <div class="wind"></div>
+    <div class="humidity"></div>
+  </div>
+</header>
 
-    
-  </header>
+<main class="main">
 
+  <!--СЛАЙДЕР-ПРИВЕТСТВИЕ-->
+  <div class="slider-icons">
+    <button class="slide-prev slider-icon"></button>
+    <button class="slide-next slider-icon"></button>
+  </div>
 
-  <main class="main">
+  <time class="time"></time>
 
-            <!--СЛАЙДЕР-ПРИВЕТСТВИЕ-->
-    <div class="slider-icons">
-      <button class="slide-prev slider-icon"></button>
-      <button class="slide-next slider-icon"></button>
-    </div>
+  <date class="date"></date>
 
-    <time class="time"></time>
+  <div class="greeting-container">
+    <span class="greeting"></span>
+    <input type="text" class="name" placeholder="[Enter name]" />
+  </div>
+</main>
 
-    <date class="date"></date>
+<footer class="footer">
 
-    <div class="greeting-container">
-      <span class="greeting"></span>
-      <input type="text" class="name" placeholder="[Enter name]" />
-    </div>
-
-  </main>
-
-
-
-  <footer class="footer">
-
-            <!--ЦИТАТЫ-->
-    <button class="change-quote quote-container"></button>
-    <div class="quote-container">
-      <div class="quote"></div>
-      <div class="author"></div>
-    </div>
-
-
+  <!--ЦИТАТЫ-->
+  <button class="change-quote quote-container"></button>
+  <div class="quote-container">
+    <div class="quote"></div>
+    <div class="author"></div>
+  </div>
 
   <button class="setting-button"></button>
 
   <div class="setting-container-none">
-      
-      <div class="languages">
-        <h3>Language</h3>     
-         <ul> 
-            <li>
-              <label for="en">English</label> 
-              <input type="radio" class="language-english" name="languages" id="en" value="en" checked>
-            </li>
 
-            <li>
-              <label for="ru">Russian</label> 
-              <input type="radio" class="language-russian" name="languages" id="ru" value="ru">
-            </li>
-        </ul>
-
-      </div>
-
-        <div class="photo">
-          <h3>Photo source</h3>
-          <ul> 
-            <li>
-              <label for="GitHub">GitHub</label> 
-              <input type="radio" class="source-github one" name="photo" id="GitHub" value="GitHub" checked>
-            </li>
-
-            <li>
-              <label for="unsplash">Unsplash API</label> 
-              <input type="radio" class="source-unsplash two" name="photo" id="unsplash" value="unsplash">
-            </li>
-
-            <li>
-              <label for="flickr">Flickr AP</label> 
-              <input type="radio" class="source-flickr three" name="photo" id="flickr" value="flickr">
-            </li>
-        </ul>
-        </div>
-
-        <div class="show-block">
-          <h3>Show blocks</h3>
-          <ul> 
-            <li>
-              <label for="time">Time</label> 
-              <input type="checkbox" class="show-time" name="show-block" id="time" value="yes" checked>
-            </li>
-
-            <li>
-              <label for="date">Date</label> 
-              <input type="checkbox" class="show-date" name="show-block" id="date" value="yes" checked>
-            </li>
-
-            <li>
-              <label for="greeting">Greeting</label> 
-              <input type="checkbox" class="show-greeting" name="show-block" id="greeting" value="yes" checked>
-            </li>
-
-            <li>
-              <label for="quote">Quote</label> 
-              <input type="checkbox" class="show-quote" name="show-block" id="quote" value="yes" checked>
-            </li>
-
-            <li>
-              <label for="weather">Weather</label> 
-              <input type="checkbox" class="show-weather" name="show-block" id="weather" value="yes" checked>
-            </li>
-
-            <li>
-              <label for="audio">Audio</label> 
-              <input type="checkbox" class="show-audio" name="show-block" id="audio" value="yes" checked>
-            </li>
-        </ul>
-        </div>
-
+  <div class="languages">
+    <h3>Language</h3>
+    <ul>
+      <li>
+        <label for="en">English</label> 
+        <input type="radio" class="language-english" name="languages" id="en" value="en" checked>
+      </li>
+      <li>
+        <label for="ru">Russian</label> 
+        <input type="radio" class="language-russian" name="languages" id="ru" value="ru">
+      </li>
+    </ul>
   </div>
 
+  <div class="photo">
+    <h3>Photo source</h3>
+    <ul>
+      <li>
+        <label for="GitHub">GitHub</label> 
+        <input type="radio" class="source-github one" name="photo" id="GitHub" value="GitHub" checked>
+      </li>
+      <li>
+        <label for="unsplash">Unsplash API</label> 
+        <input type="radio" class="source-unsplash two" name="photo" id="unsplash" value="unsplash">
+      </li>
+      <li>
+        <label for="flickr">Flickr AP</label> 
+        <input type="radio" class="source-flickr three" name="photo" id="flickr" value="flickr">
+      </li>
+    </ul>
+  </div>
 
-  </footer>
+  <div class="show-block">
+    <h3>Show blocks</h3>
+    <ul>
+      <li>
+        <label for="time">Time</label> 
+        <input type="checkbox" class="show-time" name="show-block" id="time" value="yes" checked>
+      </li>
+      <li>
+        <label for="date">Date</label> 
+        <input type="checkbox" class="show-date" name="show-block" id="date" value="yes" checked>
+      </li>
+      <li>
+        <label for="greeting">Greeting</label> 
+        <input type="checkbox" class="show-greeting" name="show-block" id="greeting" value="yes" checked>
+      </li>
+      <li>
+        <label for="quote">Quote</label> 
+        <input type="checkbox" class="show-quote" name="show-block" id="quote" value="yes" checked>
+      </li>
+      <li>
+        <label for="weather">Weather</label> 
+        <input type="checkbox" class="show-weather" name="show-block" id="weather" value="yes" checked>
+      </li>
+      <li>
+        <label for="audio">Audio</label> 
+        <input type="checkbox" class="show-audio" name="show-block" id="audio" value="yes" checked>
+      </li>
+    </ul>
+  </div>
+</footer>
 
-  <section class="links">
-    <div class="link-github">
-        <a href="https://github.com/YaninaSeb">
-          <img src="assets/Github_icon.png" alt="github">
-        </a>
-    </div>
-  
-     <div class="year-create">2021</div>
-  
-    <div class="link-school">
-        <a href="https://rs.school/js/">
-        <img src="assets/rs_school_js.svg" alt="rs_school" width="100"> </a>
-    </div>  
-  </section>
-
-
+<section class="links">
+  <div class="link-github">
+    <a href="https://github.com/YaninaSeb">
+      <img src="assets/Github_icon.png" alt="github">
+    </a>
+  </div>
+  <div class="year-create">2021</div>
+  <div class="link-school">
+    <a href="https://rs.school/js/">
+      <img src="assets/rs_school_js.svg" alt="rs_school" width="100">
+    </a>
+  </div>
+</section>
 
   <script src="js/clock_calendar.js"></script>
   <script src="js/slider.js"></script>
@@ -211,15 +177,8 @@
   <script src="js/weather.js"></script>
   <script src="js/playList.js"></script>
   <script type="module" src="js/audiopleer.js"></script>
-
   <script src="js/sliderAPI.js"></script>
   <script src="js/setting.js"></script>
   <script src="js/show_blocks.js"></script>
-  <script src="js/score.js"></script>
-
-
-
-
-
 </body>
 </html>
