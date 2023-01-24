@@ -36,4 +36,4 @@
 </details>
 
 ## Ссылка на сайт:
-https://suspicious-mcnulty-649140.netlify.app/
+https://yaninaseb.github.io/Momentum/
